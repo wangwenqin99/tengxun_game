@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>腾讯游戏平台</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float:right;
+		}
+		.container{
+			width: 980px;
+			margin:0 auto;
+		}
+		/*开始游戏排行榜*/
+		#rank{
+			overflow: hidden;
+		}
+		#rank a{
+			width: 205px;
+			height: 40px;
+			background-image: url("images/ost-bg.png");
+			/*float: left;*/
+			background-position: 0 -37px;
+		}
+		#rank h3{
+			margin-top: 14px;
+			font-weight: normal;
+		}
+		#rank h3 p{
+			font-size: 12px;
+			color: #464646;
+		}
+		#rank h3 div{
+			height: 12px;
+			width: 12px;
+			background-image: url("images/ost-bg.png");
+			background-position: -149px -133px;
+		}
+		/*开始导航条*/
+		#navigation{
+			height: 84px;
+			background-color: #1c2023;
+		}
+		#navigation .box{
+			width: 1050px;
+			/*background-color: red;*/
+			overflow: hidden;
+		}
+		#navigation .box a.head{
+			width: 285px;
+			height: 50px;
+			display: block;
+			background-image: url("images/logo.png");
+			background-repeat: no-repeat;
+			margin-top: 17px;
+		}
+		#navigation .box ul li{
+			float: left;
+			margin-right: 25px;
+		}
+		#navigation .box ul li a{
+			line-height: 47px;
+			display: block;
+			color:#5e84a4;
+			font-size: 16px;
+			padding-top: 17px;
+			border-top: 3px solid #1c2023;
+			font-weight: bolder;
+
+		}
+		#navigation .box ul li a:hover{
+			 color: #52b3ff;
+		}
+		#navigation .box ul li a.first{
+			color: #52b3ff;
+			border-top: 3px solid #52b3ff;
+		}
+		/*开始大logo	*/
+		#txlogo{
+			height: 412px;
+		}
+		#txlogo a{
+			width: 1920px;
+			height: 412px;
+			display: block;
+			position: relative;
+		}
+		#txlogo a div{
+			width: 265px;
+			height: 70px;
+			background-image: url("images/tgp_sprites241.png");
+			background-position: 0 -242px;
+			position: absolute;
+			bottom:98px;
+			left:489px;
+		}
+		#txlogo a ul{
+			position: absolute;
+			bottom:30px;
+			left:489px;		
+		}
+		#txlogo a ul li{
+			float: left;
+			background-color: white;
+			width: 12px;
+			height: 13px;
+			margin-right: 10px;
+			border-radius: 8px;
+		}
+		#txlogo a ul li.first{
+			width: 24px;
+		}
+		#pin a{
+			width: 130px;
+			height: 135px;
+			display: block;
+			position: fixed;
+			right: 60px;
+			top: 300px;
+			border:1px solid gray;
+			font-size: 8px;
+
+		}
+		#pin a p{
+			height:15px;
+			line-height: 15px;
+			width: 130px;
+			text-align: center;
+			color: #FF0D0D;
+			font-size: 10px;
+
+		}
+		#pin a img{
+			width: 130px;
+			height: 130px;
+		}
+		/*开始主要内容*/
+		#content{
+			overflow: hidden;	
+			margin-top: 5px;
+		}
+		#content .content-left-t{
+			width: 698px;	
+			overflow: hidden;
+			/*background-color: yellow;*/
+		}
+		#content .content-left-t .left-top{
+			overflow: hidden;
+
+		}
+		#content .content-left-t .left-top p{
+			width: 20px;
+			height: 20px;
+			background-image: url("images/tgp_sprites241.png");
+			background-position: -214px -94px;
+			margin-top: 5px;
+		}
+		#content .content-left-t .left-top h2{
+			font-weight: normal;
+			color: #5c5c5c;
+			font-style: 18px;
+			margin-top: 5px;
+			font-size: 14px;
+		}
+		#content .content-left-t .left-top a{
+			width: 84px;
+			height: 29px;
+			background-color: #3EACFE;
+			color: #ebf5ff;
+			line-height: 29px;
+			font-size: 14px;
+			border-radius: 29px;
+			text-align: center;
+		}
+		#content .content-left-t .left-left{
+		 margin-top: 5px;
+		}
+		#content .content-left-t .left-left a{
+			width: 243px;
+			height: 270px;
+			display: block;
+			position: relative;
+		}
+		#content .content-left-t .left-left p{
+			position: absolute;
+			background-color: #44474e;
+			height: 30px;
+			padding-left: 10px;
+			line-height: 30px;
+			color: white;
+			width: 233px;
+			bottom: 0px;
+		}
+		#content .content-left-t .left-right{
+			width: 426px;
+			height: 305px;
+			margin-top: 5px;
+			/*background-color: gray;*/
+			overflow: hidden;
+		}
+		#content .content-left-t .left-right .rt ul li{
+			float: left;
+			
+		}
+		#content .content-left-t .left-right .rt ul li a{
+			width: 104px;
+			height: 39px;
+			display: block;
+			text-align: center;
+			line-height: 40px;
+			color: #272c36;
+			background-color: #cedced;
+			border-top: 2px solid #cedced;
+			font-size: 16px;
+
+		}
+		#content .content-left-t .left-right .rt ul li a:hover{
+			color: #009cff;
+		}
+		#content .content-left-t .left-right .rt ul li a.first{
+			background-color: #fff;
+			color: #009cff;	
+			border-top: 2px solid #009cff;		
+		}
+		#content .content-left-t .left-right .rc .one{
+			padding-bottom: 10px;
+			border-bottom: 1px solid #434343;
+		}
+		#content .content-left-t .left-right .rc .one li a{
+			color: #009cff;
+			font-size: 20px;
+			line-height: 46px;
+			padding-left: 40px;
+		}
+		#content .content-left-t .left-right .rc .one li p{
+			line-height: 24px;
+			font-size: 14px;
+			width: 335px;
+		}
+		#content .content-left-t .left-right .rc .two{
+			margin-top: 10px;
+		}
+		#content .content-left-t .left-right .rc .two li a{
+			font-size: 14px;
+			line-height: 24px;
+			color: #434343;
+		}
+		#content .content-right{
+			width: 240px;
+			height: 653px;
+			/*background-color: yellow;*/
+			overflow: hidden;
+		}
+		#content .content-right .top{
+			height: 25px;
+			padding-top: 10px;
+		}
+		#content .content-right .top div{
+			width: 20px;
+			height: 20px;
+			background-image: url("images/tgp_sprites241.png");
+			background-position: -214px -142px;
+		}
+		#content .content-left-b{
+			width: 698px;	
+			/*background-color: green;*/
+			overflow: hidden;
+		}
+		#content .content-left-b .left-top p{
+			width: 20px;
+			height: 20px;
+			background-image: url("images/tgp_sprites241.png");
+			background-position: -214px -119px;
+			margin-top: 5px;
+		}
+		#content .content-left-b .left-top h2{
+			font-weight: normal;
+			color: #5c5c5c;
+			font-style: 18px;
+			margin-top: 5px;
+			font-size: 14px;
+		}
+		#content .content-left-b .left-top a{
+			width: 84px;
+			height: 29px;
+			background-color: #3EACFE;
+			color: #ebf5ff;
+			line-height: 29px;
+			font-size: 14px;
+			border-radius: 29px;
+			text-align: center;
+		}
+		#content .content-left-b .logo{
+
+			width: 696px;
+			height: 296px;
+			/*background-color: yellow;*/
+		}
+		#content .content-left-b .logo ul li{
+			float: left;
+			margin:12px;
+		}
+		/*开始次要内容*/
+		#leg{
+			overflow: hidden;
+		}
+		#leg .leftlogo{
+			overflow: hidden;
+
+		}
+		#leg .leg-left{
+			width: 230px;
+			/*background-color: yellow;*/
+			overflow: hidden;
+		}
+		#leg .leg-left .leg-first{
+			width: 20px;
+			height: 20px;
+			background-image: url("images/tgp_sprites241.png");
+			background-position: -214px -116px;
+			margin-top: 12px;
+		}
+		#leg .leg-left h2{
+			color: #5c5c5c;
+			font-size: 18px;
+			font-weight: normal;
+			width: 95px;
+			height: 48px;
+			line-height: 48px;
+		}
+		#leg .leg-left .leg-logo ul li{
+			float: left;
+			width: 195px;
+		}
+		#leg .leg-left .leg-logo ul li span{
+			
+			background-color: #ff8400;
+		}
+		#leg .leg-left .leg-logo ul li div a{
+			background-color:#42b6ff;
+			color: white;
+
+		}
+		#leg .leg-left .leg-logo ul li a.cb{
+			color: #44474e;
+		}
+		#leg .leg-left{
+			width: 230px;
+			/*background-color: yellow;*/
+			overflow: hidden;
+		}
+		#leg .leg-center{
+			overflow: hidden;
+		}
+		#leg .leg-center .leg-first{
+			width: 20px;
+			height: 20px;
+			background-image: url("images/tgp_sprites241.png");
+			background-position: -213px -189px;
+			margin-top: 12px;
+		}
+		#leg .leg-center h2{
+			color: #5c5c5c;
+			font-size: 18px;
+			font-weight: normal;
+			width: 95px;
+			height: 48px;
+			line-height: 48px;
+		}
+		#leg .leg-center .four-logo{
+			width: 436px;
+			height: 276px;
+			/*background-color: yellow;*/
+			overflow: hidden;
+		}
+		#leg .leg-center .four-logo ul{
+		}
+		#leg .leg-center .four-logo ul li{
+			float: left;
+			margin:10px;
+		}
+		#leg .leg-right{
+			width: 290px;
+			overflow: hidden;
+		}
+		#leg .leg-right .leg-first{
+			width: 20px;
+			height: 20px;
+			background-image: url("images/tgp_sprites241.png");
+			background-position: -213px -214px;
+			margin-top: 12px;
+		}
+		#leg .leg-right h2{
+			color: #5c5c5c;
+			font-size: 18px;
+			font-weight: normal;
+			width: 95px;
+			height: 48px;
+			line-height: 48px;
+		}
+		#leg .leg-right .minlogo{
+			width: 250px;
+			height: 288px;
+			/*background-color: green;*/
+		}
+		#leg .leg-right .minlogo ul li{
+			float: left;
+			margin: 10px;
+			text-align: center;
+		}
+		/*开始引申*/
+		#foot {
+			height: 130px;
+
+			background-color: #181c23;
+			margin:50px auto 0;
+		}
+		#foot .nihao{
+			width: 940px;
+			height: 57px;
+			margin: 30px auto 0;
+			padding-top: 30px;
+			/*background-color: red;*/
+		}
+		#foot .nihao .first ul{
+			overflow: hidden;
+			width: 700px;
+			margin: 0 auto;
+		}
+		#foot .nihao .first ul li{
+			float: left;
+			margin: 0 5px;
+		}
+		#foot .nihao a{
+			color: #5f697d;
+			font-size: 12px;
+		}
+		#foot .nihao .two{
+			text-align: center;
+			color: #5f697d;
+			font-size: 12px;
+		}
+		#foot .nihao .three{
+			text-align: center;
+			
+		}
+
+		
+
+	</style>
+</head>
+<body>
+<!-- 	<div id="pin">
+		<a href="#"><img src="image/qcode (1).png" alt="" /></a>
+	</div> -->
+	<!-- 游戏排行榜 -->
+	<div id="rank" class="container">
+		<a class="fl" href="#"></a>
+		<img class="fl" src="images/1737418195_610587651_1488534151_230_40.jpg" alt="" />
+		<h3 class="fr">
+			<p class="fl">腾讯游戏排行榜</p>
+			<div class="fl"></div>
+		</h3>
+	</div>
+	<!-- 导航条 -->
+	<div id="navigation">
+		<div class="box container">
+			<a class="fl head" href="#"></a>
+			<ul class="fr">
+				<li><a class="first" href="#">主页</a></li>
+				<li><a href="#">游戏助手</a></li>
+				<li><a href="#">活动中心</a></li>
+				<li><a href="#">TGP BOX</a></li>
+				<li><a href="#">掌上TGP</a></li>
+				<li><a href="#">TGP2.0</a></li>
+				<li><a href="#">网吧专版</a></li>
+				<li><a href="#">官方论谈</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 大logo -->
+	<div id="txlogo">
+		<a class="container" href="#">
+			<img src="images/0.jpg" alt="" />
+			<div></div>
+			<ul>
+				<li class="first"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</a>
+	</div>
+	<!-- 主要内容 -->
+	<div id="content" class="container">
+		<div class="content-left-t fl">
+			<div class="left-top">
+				<p class="fl" class="fl" class="fl"></p>
+				<h2 class="fl" class="fl">新闻中心</h2>
+				<a class="fr" href="#">查看更多+</a>
+			</div>
+			<div class="left-left fl">
+				<a href="#">
+					<img src="images/14897175714509.jpg" alt="" />
+					<p>NZ</p>
+				</a>
+			</div>
+			<div class="left-right fr">
+				<div class="rt">
+					<ul>
+						<li><a class="first" href="#">全部</a></li>
+						<li><a href="#">公告</a></li>
+						<li><a href="#">活动</a></li>
+						<li><a href="#">媒体</a></li>
+					</ul>
+				</div>
+				<div class="rc">
+					<ul class="one">
+						<li><a href="#">TGP手游与页游迁移下架公告</a></li>
+						<li><p>TGP手游业务迁移至腾讯手游助手、TGP网页游戏业务迁移至QQ游戏大厅</p></li>
+					</ul>
+					<ul class="two">
+						<li><a href="#">[公告] 2017腾讯游戏平台（TGP）版本更新日志</a></li>
+						<li><a href="#">[公告] TGP饥荒首月热销突破100万</a></li>
+						<li><a href="#">[公告] TGP《饥荒：联机版》双周热销50万份，走心营造国内</a></li>
+						<li><a href="#">[公告] TGP饥荒国服真的火“爆”了！</a></li>
+						<li><a href="#">[公告] 熊猫TV《饥荒：联机版》主播生存赛即将开启！</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="content-right fr">
+			<div class="top fl">
+				<div class="fl"></div>
+				<p class="fl">功能直通车</p>
+			</div>
+			<ul>
+				<li><a href="#"><img src="images/bus_1.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="images/bus_2.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="images/bus_3.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="images/bus_4.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="images/bus_5.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="images/bus_6.jpg" alt="" /></a></li>
+			</ul>
+		</div>
+		<div class="content-left-b fl">
+			<div class="left-top">
+				<p class="fl" class="fl" class="fl"></p>
+				<h2 class="fl" class="fl">最新活动</h2>
+				<a class="fr" href="#">查看更多+</a>
+			</div>
+			<div class="logo fl">
+				<ul>
+					<li><a href="#"><img src="images/14890294466827.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/14896473992209.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/14897187737584.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/14897478219272.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/14883663459667.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 次要内容 -->
+	<div id="leg" class="container">
+		<div class="leftlogo fl">
+			<div class="leg-left fl">
+				<div class="leg-first fl"></div>
+				<h2 class="fl">新游关注榜</h2>
+				<div class="leg-logo">
+				<ul>
+					<li>
+						<span>01</span>
+						<a class="cb" href="#">新流星搜剑录</a>
+						<div class="fr">
+						<a href="#">官网</a>
+						<a href="#">抢号</a>
+						</div>
+					</li>
+					<li>
+						<span>02</span>
+						<a class="cb" href="#">天涯明月刀</a>
+						<div class="fr">
+						<a href="#">官网</a>
+						<a href="#">抢号</a>
+						</div>
+					</li>
+					<li>
+						<span>03</span>
+						<a class="cb" href="#">流放之路</a>
+						<div class="fr">
+						<a href="#">官网</a>
+						<a href="#">抢号</a>
+						</div>
+					</li>
+					<li>
+						<span>04</span>
+						<a class="cb" href="#">战争雷霆</a>
+						<div class="fr">
+						<a href="#">官网</a>
+						<a href="#">抢号</a>
+						</div>
+					</li>
+					<li>
+						<span>05</span>
+						<a class="cb" href="#">枪神记</a>
+						<div class="fr">
+						<a href="#">官网</a>
+						<a href="#">抢号</a>
+						</div>
+						<a href="#"><img src="images/0 (1).jpg" alt="" /></a>
+					</li>
+				</ul>
+			</div>
+			</div>
+			</div>
+			<div class="leg-center fl">
+			<div class="leg-first fl"></div>
+			<h2 class="fl">热门视频</h2>
+			<div class="leg-logo">
+			<div class="four-logo fl">
+				<ul>
+					<li><a href="#"><img src="images/0 (2).jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/14816847586973.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/14703807505770.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/0 (3).jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<div class="leg-right fr">
+			<div class="leg-first fl"></div>
+			<h2 class="fl">合作伙伴</h2>
+			<div class="minlogo fr">
+				<ul>
+					<li>
+						<a href="#">
+							<img src="images/2002554700970 (1).jpg" alt="" />
+							<p>QQ阅读</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/498971240436415 (1).jpg" alt="" />
+							<p>腾讯GAD</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/526511395804138 (1).png" alt="" />
+							<p>腾讯动漫</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/59972320650436 (1).png" alt="" />
+							<p>好莱坞影院</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 引申 -->
+	<div id="foot">
+		<div class="nihao">
+			<div class="first">
+				<ul>
+					<li><a href="#">腾讯互动娱乐 |</a></li>
+					<li><a href="#">服务条款 |</a></li>
+					<li><a href="#">广告服务 |</a></li>
+					<li><a href="#">腾讯游戏招聘 |</a></li>
+					<li><a href="#">腾讯游戏客服 |</a></li>
+					<li><a href="#">游戏地图 |</a></li>
+					<li><a href="#">游戏活动 |</a></li>
+					<li><a href="#">商务合作 |</a></li>
+					<li><a href="#">网站导航</a></li>
+				</ul>
+			</div>
+			<div class="two">
+				<p>COPYRIGHT © 1998 – 2017 TENCENT. ALL RIGHTS RESERVED.</p>
+			</div>
+			<div class="three">
+				<a href="#">腾讯公司</a>
+				<a href="#">版权所有</a>
+			</div>
+		</div>
+	<!-- 二维码 -->
+	</div>
+	<div id="pin">
+		<a href="#">
+		<p>扫一扫下载掌上TGP</p>
+		<img src="images/qcode (1).png" alt="" />
+		</a>
+	</div>
+</body>
+</html>
